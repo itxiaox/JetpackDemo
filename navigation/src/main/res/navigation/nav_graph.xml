@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.itxiaox.jetpackdemo.navigation.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <argument android:name="myArg"
+            app:argType="integer"
+            android:defaultValue="0"/>
+        <action
+            android:id="@+id/action_mainFragment_to_firstFragment"
+            app:destination="@id/firstFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingFragment"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/xml"
+            app:destination="@id/nav_graph2" />
+        <action
+            android:id="@+id/action_mainFragment_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.itxiaox.jetpackdemo.navigation.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.itxiaox.jetpackdemo.navigation.SettingFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <navigation
+        android:id="@+id/login"
+        android:label="注册"
+        app:startDestination="@id/firstFragment2">
+        <fragment
+            android:id="@+id/firstFragment2"
+            android:name="com.itxiaox.jetpackdemo.navigation.FirstFragment"
+            android:label="fragment_first"
+            tools:layout="@layout/fragment_first" />
+        <fragment
+            android:id="@+id/firstFragment3"
+            android:name="com.itxiaox.jetpackdemo.navigation.FirstFragment"
+            android:label="fragment_first"
+            tools:layout="@layout/fragment_first" />
+    </navigation>
+</navigation>
