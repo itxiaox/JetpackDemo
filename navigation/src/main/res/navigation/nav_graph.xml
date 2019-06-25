@@ -27,6 +27,9 @@
         <action
             android:id="@+id/action_mainFragment_to_login"
             app:destination="@id/login" />
+        <action
+            android:id="@+id/action_mainFragment_to_bottom_activity"
+            app:destination="@id/bottom_activity" />
     </fragment>
     <fragment
         android:id="@+id/firstFragment"
@@ -53,4 +56,13 @@
             android:label="fragment_first"
             tools:layout="@layout/fragment_first" />
     </navigation>
+    <activity
+        android:id="@+id/bottom_activity"
+        android:name="com.itxiaox.jetpackdemo.navigation.menu.BottomActivity"
+        android:label="Bottom  Activity"
+        tools:layout="@layout/activity_bottom">
+        <argument
+            android:name="product_id"
+            app:argType="integer" />
+    </activity>
 </navigation>

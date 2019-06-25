@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.itxiaox.jetpackdemo.navigation.Main2Activity"></activity>
+        <activity
+            android:name="com.itxiaox.jetpackdemo.navigation.menu.BottomActivity"
+            android:label="@string/title_activity_bottom"></activity>
         <activity android:name="com.itxiaox.jetpackdemo.navigation.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

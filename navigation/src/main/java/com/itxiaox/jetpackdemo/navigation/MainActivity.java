@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 //        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
 
 //        Toolbar toolbar = findViewById(R.id.toolbar);
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
+//        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
 //        NavigationUI.setupWithNavController(bottomNav,navController);
 
 

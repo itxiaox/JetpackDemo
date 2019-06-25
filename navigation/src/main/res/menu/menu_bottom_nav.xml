@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <!--android:contentDescription="contentDescription"-->
     <!--android:iconTintMode="src_atop"-->
     <!--android:iconTint="@android:color/background_dark"-->
     <item android:id="@+id/main_page"
-        android:title="菜单1"
         android:icon="@drawable/ic_home_black_24dp"
-
+        android:iconTint="#ff00"
+        android:title="菜单1"
         />
     <item android:id="@+id/main_page2"
         android:title="菜单2"
@@ -14,10 +15,12 @@
         />
     <item android:id="@+id/main_page3"
         android:title="菜单3"
+        android:iconTint="#ff00"
         android:icon="@drawable/ic_home_black_24dp"
 
         />
     <item android:id="@+id/main_page4"
+        android:iconTint="#ff00"
         android:title="菜单4"
         android:icon="@drawable/ic_home_black_24dp"
 
