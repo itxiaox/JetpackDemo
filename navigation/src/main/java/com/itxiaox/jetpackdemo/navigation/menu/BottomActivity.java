@@ -4,12 +4,15 @@ import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.itxiaox.android.xutils.log.LogUtils;
 import com.itxiaox.navigation.R;
 
 public class BottomActivity extends AppCompatActivity {
+    private static final String TAG = "BottomActivity";
     private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -34,6 +37,7 @@ public class BottomActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        LogUtils.i(TAG+";onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom);
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -43,4 +47,15 @@ public class BottomActivity extends AppCompatActivity {
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogUtils.i(TAG+";onPause");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LogUtils.i(TAG+";onDestroy");
+    }
 }

@@ -5,6 +5,7 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/mainFragment">
 
+    <!--MainFragment-->
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.itxiaox.jetpackdemo.navigation.MainFragment"
@@ -14,8 +15,8 @@
             app:argType="integer"
             android:defaultValue="0"/>
         <action
-            android:id="@+id/action_mainFragment_to_firstFragment"
-            app:destination="@id/firstFragment" />
+            android:id="@+id/action_mainFragment_to_oneFragment"
+            app:destination="@id/oneFragment" />
         <action
             android:id="@+id/action_mainFragment_to_settingFragment"
             app:popExitAnim="@android:anim/slide_out_right"
@@ -31,31 +32,64 @@
             android:id="@+id/action_mainFragment_to_bottom_activity"
             app:destination="@id/bottom_activity" />
     </fragment>
+
+    <!--OneFragment-->
     <fragment
-        android:id="@+id/firstFragment"
-        android:name="com.itxiaox.jetpackdemo.navigation.FirstFragment"
-        android:label="fragment_first"
-        tools:layout="@layout/fragment_first" />
+        android:id="@+id/oneFragment"
+        android:name="com.itxiaox.jetpackdemo.navigation.OneFragment"
+        android:label="fragment_one"
+        tools:layout="@layout/fragment_one" >
+        <argument android:name="userName"
+            app:argType="string"
+            android:defaultValue="张山"/>
+        <action
+            android:id="@+id/action_oneFragment_to_twoFragment"
+            app:destination="@id/twoFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_oneFragment_to_threeFragment"
+            app:destination="@id/threeFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+      </fragment>
+
+    <!--TwoFragment-->
+    <fragment
+        android:id="@+id/twoFragment"
+        android:name="com.itxiaox.jetpackdemo.navigation.TwoFragment"
+        android:label="fragment_two"
+        tools:layout="@layout/fragment_two">
+
+        <action
+            android:id="@+id/action_twoFragment_threeFragment"
+            app:destination="@+id/threeFragment" />
+    </fragment>
+
+
+    <!--ThreeFragment-->
+    <fragment
+        android:id="@+id/threeFragment"
+        android:name="com.itxiaox.jetpackdemo.navigation.ThreeFragment"
+        android:label="fragment_three"
+        tools:layout="@layout/fragment_three" >
+        <action android:id="@+id/action_threeFragment_mainFragment"
+            app:destination="@+id/mainFragment"/>
+    </fragment>
+
+
+    <!--Setting-->
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.itxiaox.jetpackdemo.navigation.SettingFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
-    <navigation
-        android:id="@+id/login"
-        android:label="注册"
-        app:startDestination="@id/firstFragment2">
-        <fragment
-            android:id="@+id/firstFragment2"
-            android:name="com.itxiaox.jetpackdemo.navigation.FirstFragment"
-            android:label="fragment_first"
-            tools:layout="@layout/fragment_first" />
-        <fragment
-            android:id="@+id/firstFragment3"
-            android:name="com.itxiaox.jetpackdemo.navigation.FirstFragment"
-            android:label="fragment_first"
-            tools:layout="@layout/fragment_first" />
-    </navigation>
+
+    <!--导航到一个Activity-->
     <activity
         android:id="@+id/bottom_activity"
         android:name="com.itxiaox.jetpackdemo.navigation.menu.BottomActivity"
@@ -65,4 +99,22 @@
             android:name="product_id"
             app:argType="integer" />
     </activity>
+
+
+<!--新的逻辑导航图，子导航图-->
+    <navigation
+        android:id="@+id/login"
+        android:label="注册"
+        app:startDestination="@id/oneFragment2">
+        <fragment
+            android:id="@+id/oneFragment2"
+            android:name="com.itxiaox.jetpackdemo.navigation.OneFragment"
+            android:label="fragment_first"
+            tools:layout="@layout/fragment_one" />
+        <fragment
+            android:id="@+id/firstFragment3"
+            android:name="com.itxiaox.jetpackdemo.navigation.OneFragment"
+            android:label="fragment_first"
+            tools:layout="@layout/fragment_one" />
+    </navigation>
 </navigation>

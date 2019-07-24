@@ -6,9 +6,9 @@
     app:startDestination="@id/firstFragment4">
     <fragment
         android:id="@+id/firstFragment6"
-        android:name="com.itxiaox.jetpackdemo.navigation.FirstFragment"
+        android:name="com.itxiaox.jetpackdemo.navigation.OneFragment"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_one">
         <action
             android:id="@+id/action_firstFragment6_pop"
             app:popUpTo="@id/firstFragment6"
@@ -16,18 +16,18 @@
     </fragment>
     <fragment
         android:id="@+id/firstFragment5"
-        android:name="com.itxiaox.jetpackdemo.navigation.FirstFragment"
+        android:name="com.itxiaox.jetpackdemo.navigation.OneFragment"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first" >
+        tools:layout="@layout/fragment_one" >
         <action
             android:id="@+id/action_firstFragment5_to_firstFragment4"
             app:destination="@id/firstFragment4" />
     </fragment>
     <fragment
         android:id="@+id/firstFragment4"
-        android:name="com.itxiaox.jetpackdemo.navigation.FirstFragment"
+        android:name="com.itxiaox.jetpackdemo.navigation.OneFragment"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first" >
+        tools:layout="@layout/fragment_one" >
         <action
             android:id="@+id/action_firstFragment4_to_firstFragment6"
             app:destination="@id/firstFragment6" />

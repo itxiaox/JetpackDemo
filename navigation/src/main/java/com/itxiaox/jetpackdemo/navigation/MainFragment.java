@@ -28,8 +28,7 @@ public class MainFragment extends Fragment {
         view.findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_firstFragment);
+                Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_oneFragment);
             }
         });
         view.findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
@@ -43,15 +42,15 @@ public class MainFragment extends Fragment {
             }
         });
         textView = view.findViewById(R.id.textView);
-
         view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putString("key2","value2");
-                 //方法一
-//                Navigation.findNavController(view).navigate(R.id.bottom_activity);//ResId: nav_graph 中定义的id
-
+                 //方法一，没有定义action也可用，
+//                Navigation.findNavController(view).navigate(R.id.bottom_activity,bundle);//ResId: nav_graph 中定义的id
+                 //方法二，在nav_graph中定义了action（action_mainFragment_to_bottom_activity）后，可以采用此方法 ，
+                // 一般建议定义action这样，可以通过nav_graph图形预览看到各个页面对象的关系
                 Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_bottom_activity,bundle);
 
             }
