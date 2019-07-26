@@ -1,10 +1,10 @@
 package com.itxiaox.lifecycle.ui.main;
 
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +31,13 @@ public class MainFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        //这里使用的是ViewModelProviders，当前ViewModel的生命周期长度和Activity等长
         mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+
+        //通过JSViewModelProvider 获取viewModel，这时候的ViewModel的生命周期和Application等长
+        mViewModel = JSViewModelProvider.getModel(MainViewModel.class);
+
         // TODO: Use the ViewModel
         mViewModel.getTokens().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override

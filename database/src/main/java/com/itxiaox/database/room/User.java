@@ -1,4 +1,4 @@
-package com.itxiaox.database;
+package com.itxiaox.database.room;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -58,5 +58,17 @@ public class User {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid=" + uid +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", tag='" + tag + '\'' +
+                '}';
     }
 }

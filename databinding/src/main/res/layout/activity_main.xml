@@ -9,7 +9,7 @@
             type="com.itxiaox.databinding.User" />
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -47,5 +47,5 @@
             tools:layout_editor_absoluteX="62dp"
             tools:layout_editor_absoluteY="86dp" />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
