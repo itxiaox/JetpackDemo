@@ -1,1 +1,3 @@
-include ':app', ':navigation', ':lifecycle', ':databinding', ':database', ':workmanager', ':roomlab'
+include ':app', ':navigation', ':lifecycle', ':databinding', ':database', ':workmanager',
+        
+        ':roomlab'
